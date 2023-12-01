@@ -4,7 +4,7 @@
 
 {{ testVal }}
 
-<div>ENTRY is {{ ENTRY }}</div>
+<div class="h3 text-primary">ENTRY is {{ ENTRY }}</div>
 
 <div>blah is {{ blah }} </div>
 
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+
 
 import Test from './components/Test.vue'
 import Validation from './components/Validation.vue'
@@ -45,6 +46,12 @@ export default {
 </script>
 
 <style >
+
+/*
+  @import '../node_modules/bootstrap/dist/css/bootstrap.css';
+  @import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
+ */
+  
 
 /* #app, #rooty { */
   #app {

@@ -2,7 +2,7 @@
 
     <div id="testy">
     
-    <h4>Yes - in Test component</h4>
+    <h4 class="text-primary">Yes - in Test component</h4>
 
     <h4>You passed the prop' {{ prop1 }}'</h4>
 
@@ -13,15 +13,19 @@
 
 
 <script>
+
+//import {BFormGroup, BFormCheckboxGroup } from 'bootstrap-vue'
+
 export default {
     name: "test",
-    components: { },
-    props: ['prop1']
+  //  components: {BFormGroup, BFormCheckboxGroup },
+    props: ['prop1'],
+  //  directives: {'b-form-group' : BFormGroup, 'b-form-checkbox-group':  BFormCheckboxGroup}
 
 }
 </script>
 
-<style scoped>
+<style>
 
  #testy { 
   

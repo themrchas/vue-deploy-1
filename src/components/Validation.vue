@@ -4,7 +4,7 @@
 
     <div class="validy">
 
-        Template
+        <div class="h3 text-primary">Template</div>
 
         Item Section is {{ validationItem.section }} 
 
@@ -71,7 +71,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 
 .validy {
   background-color: #FFF;
