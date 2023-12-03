@@ -34,13 +34,13 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
 
-
+/*
 new Vue({
   render: h => h(App),
 }).$mount('#app')
+*/
 
 
-/*
+
 const wrappedElement = wrap(Vue,App);
 window.customElements.define("v-money",wrappedElement);
-*/

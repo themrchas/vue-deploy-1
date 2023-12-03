@@ -34,7 +34,7 @@ function enableShadowCss(config) {
   }));
 }
 
-/*
+
 module.exports = {
 
   
@@ -45,10 +45,11 @@ module.exports = {
   }  
 
 }
-*/
 
 
 
+/*
 module.exports = defineConfig({
   transpileDependencies: true
 })
+*/

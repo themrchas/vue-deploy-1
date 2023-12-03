@@ -39,11 +39,13 @@
 <script>
 
 import { ref } from 'vue';
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { BFormGroup, BFormCheckboxGroup } from 'bootstrap-vue'
 
 
 export default {
     name: "validation",
-    components: { },
+    components: { BFormGroup, BFormCheckboxGroup },
     props: ['validationItem','validationChoices'],
 
     setup(props) {

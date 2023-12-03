@@ -31,4 +31,5 @@ https://cli.vuejs.org/guide/build-targets.html#web-component
 
 https://stackoverflow.com/questions/74568152/use-bootstrap-css-and-other-global-css-in-vue-js-custom-elements
 
-npm run build -- --target wc --name v-money 'src/*.vue' --inline-vue
+npm run build -- --target wc --name v-money 'src/*.vue' --inlin
+stackoverflow - how to define styles for a vue component when registering a component

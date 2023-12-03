@@ -1,6 +1,9 @@
 <template>
   
+  
 <div id="rooty">
+
+
 
 {{ testVal }}
 
@@ -19,19 +22,32 @@
 
 <script>
 
-
+import { ref } from 'vue';
 import Test from './components/Test.vue'
 import Validation from './components/Validation.vue'
 
 var blah = "a variable named blah";
 
-var ENTRY = window.ENTRY;
+//var ENTRY = window.ENTRY;
 
 export default {
   name: 'App',
   components: { Test, Validation },
-  
-  setup() {
+  props: ['prop1'],
+
+  setup(props) {
+
+    let cat = window.ENTRY;
+    console.log('cat is',cat)
+
+    console.log('prop1 is',props.prop1);
+    console.log('window is',window);
+
+
+
+    
+
+    const ENTRY = ref(cat)
 
     const testVal = "here is the testVal"
 
@@ -47,10 +63,10 @@ export default {
 
 <style >
 
-/*
+
   @import '../node_modules/bootstrap/dist/css/bootstrap.css';
   @import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
- */
+ 
   
 
 /* #app, #rooty { */
