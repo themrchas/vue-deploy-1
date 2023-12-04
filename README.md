@@ -33,3 +33,5 @@ https://stackoverflow.com/questions/74568152/use-bootstrap-css-and-other-global-
 
 npm run build -- --target wc --name v-money 'src/*.vue' --inlin
 stackoverflow - how to define styles for a vue component when registering a component
+
+https://stackoverflow.com/questions/49653931/scope-bootstrap-css-in-vue   Worked

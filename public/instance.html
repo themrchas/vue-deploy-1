@@ -19,6 +19,11 @@
       <button-counter></button-counter>
       </div> 
 
+      <h2 id="app2">
+
+        var1 is {{var1}}
+        </h2>  
+
     <script>
 
       Vue.component('button-counter', {
@@ -27,7 +32,8 @@
             count:0
           }
           },
-        template: '<button @click="count++">You clicked me {{count}} times. </button>'
+        template: '<button @click="count++">You clicked me {{count}} times. </button>',
+        
       })
 
       var vm = new Vue({
@@ -42,12 +48,21 @@
           }
         }
       })
+    
+      var vm2 = new Vue({
+        el: '#app2',
+        //template: '<h2>Yes - money.  Vue instance in the house with a reactive /h2>',
+        data: {
+          var1: 'reactiveElement'
+        },
+        methods: {
+          changeMessage: function() {
+            this.var1 = "'You changed it!'";
+          }
+        },
+        style: { color: 'red'}
 
-      
-        
-  
-
-  
+      })
 
       </script>
  

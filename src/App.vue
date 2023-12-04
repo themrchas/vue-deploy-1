@@ -1,7 +1,7 @@
 <template>
   
   
-<div id="rooty">
+<div class="rooty">
 
 
 
@@ -11,43 +11,50 @@
 
 <div>blah is {{ blah }} </div>
 
+<div>window.externalVar is {{ cat }}</div>
+
 <Test :prop1="testVal"/>
 
 <Validation v-for="validationItem in validationResults" :key=Math.random() :validation-item="validationItem" :validation-choices=validationChoices />
 
+<h3>Booty below</h3>
 
+<BootyOnly />
 </div>
   
 </template>
 
 <script>
 
-import { ref } from 'vue';
+import { ref, mounted } from 'vue';
 import Test from './components/Test.vue'
 import Validation from './components/Validation.vue'
+import BootyOnly from './components/BootyOnly.vue'
+
 
 var blah = "a variable named blah";
+var blahExternal = window.externalVar;
+var windowENTRY = window.ENTRY;
 
 //var ENTRY = window.ENTRY;
 
 export default {
   name: 'App',
-  components: { Test, Validation },
+  components: { Test, Validation, BootyOnly },
   props: ['prop1'],
 
   setup(props) {
 
-    let cat = window.ENTRY;
+   // let cat = window.ENTRY;
+   let cat = blahExternal;
     console.log('cat is',cat)
 
     console.log('prop1 is',props.prop1);
-    console.log('window is',window);
+    console.log('window is',windowENTRY);
 
 
-
+    const ENTRY = ''
     
-
-    const ENTRY = ref(cat)
 
     const testVal = "here is the testVal"
 
@@ -55,18 +62,26 @@ export default {
  
     const validationResults = [ { 'section':'LEGAD', 'selection':'Yes' },  { 'section':'SNR', 'selection':'No' } ];
 
-    return {testVal, blah, validationChoices, validationResults, ENTRY}
+    return {testVal, blah, validationChoices, validationResults, ENTRY, cat}
 
-}
+},
+mounted: (() => { console.log('ENTRY is ',window.ENTRY)})
 }
 </script>
 
-<style >
+<style scoped lang="scss">
 
-
+/*
   @import '../node_modules/bootstrap/dist/css/bootstrap.css';
   @import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
+ */
+
+.rooty /deep/ {
+  @import "~../node_modules/bootstrap/dist/css/bootstrap";
+  @import "~../node_modules/bootstrap-vue/dist/bootstrap-vue";
  
+}
+</style>
   
 
 /* #app, #rooty { */

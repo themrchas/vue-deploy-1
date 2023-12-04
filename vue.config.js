@@ -34,8 +34,8 @@ function enableShadowCss(config) {
   }));
 }
 
-
-module.exports = {
+/** For use with custom element model  */
+/*module.exports = {
 
   
 
@@ -45,11 +45,11 @@ module.exports = {
   }  
 
 }
+*/
 
 
-
-/*
+/* Foe use with normal Vue implementation */
 module.exports = defineConfig({
   transpileDependencies: true
 })
-*/
+
