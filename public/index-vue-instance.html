@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script>var toPass="Variable passed to vue element"</script>
+    <script src="https://unpkg.com/vue@2.7.15"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+ 
+
+    <h4>Plain old javascript below</h4>
+    <button type="button" id="btnPlainJs">Press to show value</button>
+    <br/>
+    <br/>
+    <br/>
+
+    <script>
+
+      //Javascript varibales declared in the global (window scope)
+      var externalData = "External data info";
+      var testGlobalVar = "Here is a js global varibale;"
+      document.getElementById("btnPlainJs").addEventListener('click',() => {alert('externalData value: '+externalData) } )
+
+   </script>
+
+
+
+    <h2>Example using Vue instance model below</h2>
+    <div id="app"></div>
+
+     <!-- button-counter binds to id=#app, but the Vue instance below doeas as well -->
+      <button-counter></button-counter>
+      </div> 
+
+      <h2 id="app2">
+
+        var1 is {{var1}}
+        </h2>  
+
+    <script>
+
+      Vue.component('button-counter', {
+        data: function() {
+          return { 
+            count:0
+          }
+          },
+        template: '<button @click="count++">You clicked me {{count}} times. </button>',
+        
+      })
+
+      /* This example attempts to demonstrate the following:
+      * Binds the javascript variable 'externalData' to the Vue varibale 'var1'.  'var1' is reactive within Vue but 
+      * there is no two-way binding to the javascript varibale.  
+      * 
+      * data properties act as getters and setters so you can extract/set them outside of the vm as vm.var1
+      * 
+      * Attempts to use the javascript variable 'testGlobalVar' directly in a computed property. There is no two-way binding reflected in changes 
+      * made to the javascript variable.  'testGlobalVar' was modified in the console but the change did not show up in the template.
+      */
+      var vm = new Vue({
+        el: '#app',
+        template: "<div><h2> VM<br/>Using computed {{testGlobalVar}}</h2><h2>Yes - money.  Vue instance in the house with externalData '{{var1}}'</h2><div><button type='button' @click='changeIt'>Press It</button></div><br/><br/></div>",
+        data: {
+          var1: externalData,
+        },
+        methods: {
+          changeIt: function() {
+            alert("Button pressed");
+            this.var1 = "'You changed it!'";
+          }
+    
+        },
+        computed: {
+          testGlobalVar() {
+            return testGlobalVar;
+          }
+        }
+      })
+    
+      var vm2 = new Vue({
+        el: '#app2',
+        template: "<h2>VM2<br/>Yes - money.  Vue instance in the house with a reactive element var1 '{{var1}}'<br/><br/> </h2>",
+        data: {
+          var1: 'reactiveElement'
+        },
+        methods: {
+          changeMessage: function() {
+            this.var1 = "'You changed it!'";
+          }
+        },
+        style: { color: 'red'}
+
+      })
+
+      </script>
+ 
+ 
+
+    
+  </body>
+</html>
