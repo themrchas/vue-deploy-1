@@ -4,8 +4,6 @@ import Vue from 'vue'
 //import wrap from "@vue/web-component-wrapper"
 
 
-
-
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import { BFormGroup, BFormCheckboxGroup } from 'bootstrap-vue'
 
@@ -16,7 +14,7 @@ import App from './App.vue'
 Vue.config.productionTip = false
 
 Vue.prototype.window = window;
-//window.ENTRY.PA_LineOfEffort = "money";
+
 window.ENTRY = {};
 window.ENTRY.PA_LineOfEffort = "money";
 

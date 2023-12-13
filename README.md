@@ -34,7 +34,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   - Custom element only allows you to appas in strings as props and there is not 'reactivity' between custom element and other DOM constructs
   - In main use const wrappedElement = wrap(Vue,App); window.customElements.define("v-money",wrappedElement);
   - This method allowed bootstrap to be scoped to custom element only
-  - Requires adjustments in main.js
+  - Requires adjustments in main.js and use of web-component-wrapper
+  - vue.config.js needs to be modified to run enableShadowCss.  This allows the shadow DOM element to be created (I believe).
   - to build: 
                 npm run build -- --target wc --name v-money 'src/*.vue' --inline-vue   (--inline-vue includes vue in the build)
 
@@ -44,3 +45,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 * stackoverflow - how to define styles for a vue component when registering a component
 * https://stackoverflow.com/questions/74568152/use-bootstrap-css-and-other-global-css-in-vue-js-custom-elements
 * https://stackoverflow.com/questions/49653931/scope-bootstrap-css-in-vue This worked
+
+
+### TBD - comment out most imports for the scoped bootstrap and bootstrap-vue case
