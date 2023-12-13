@@ -47,4 +47,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 * https://stackoverflow.com/questions/49653931/scope-bootstrap-css-in-vue This worked
 
 
-### TBD - comment out most imports for the scoped bootstrap and bootstrap-vue case
+### TBD 
+- comment out most imports for the scoped bootstrap and bootstrap-vue case and ensure they are not needed
+- does bootstrap-vue.css need to be imported in scoped case
