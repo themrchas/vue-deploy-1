@@ -1,6 +1,5 @@
 <template>
-
-    
+   
 
     <div class="validy">
 
@@ -38,9 +37,8 @@
 
 <script>
 
-import { ref } from 'vue';
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import { BFormGroup, BFormCheckboxGroup } from 'bootstrap-vue'
+  import { ref } from 'vue';
+  import { BFormGroup, BFormCheckboxGroup } from 'bootstrap-vue'
 
 
 export default {
@@ -50,25 +48,18 @@ export default {
 
     setup(props) {
 
-        console.log('validationItem:', props.validationItem)
-        console.log('validationChoices:', props.validationChoices)
-       
+      console.log('validationItem:', props.validationItem)
+      console.log('validationChoices:', props.validationChoices)
 
-     //  const selected = ref([].push(props.validationItem.selection)) 
-   /*  let selected = [];
-  selected.push(props.validationItem.selection);
-*/
-     const selected = ref([]);
-     selected.value.push(props.validationItem.selection);
-     //selected.value.push(props.validationItem.selection);
+      const selected = ref([]);
+      selected.value.push(props.validationItem.selection);
 
+      const options = props.validationChoices;
 
-       const options = props.validationChoices;
+      const checkboxGroupId = "checkbox-group-" + props.validationItem.section
 
-       const checkboxGroupId = "checkbox-group-"+props.validationItem.section
-
-      return {options,selected, checkboxGroupId}
-    }
+      return { options, selected, checkboxGroupId }
+  }
    
 }
 </script>

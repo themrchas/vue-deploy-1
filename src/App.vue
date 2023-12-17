@@ -1,32 +1,28 @@
 <template>
-  
-  
-<div class="rooty">
+  <div class="rooty">
 
 
 
-{{ testVal }}
+    {{ testVal }}
 
-<div class="h3 text-primary">ENTRY is {{ ENTRY }}</div>
+    <div class="h3 text-primary">ENTRY is {{ ENTRY }}</div>
 
-<div>blah is {{ blah }} </div>
+    <div>blah is {{ blah }} </div>
 
-<div>window.externalVar is {{ cat }}</div>
+    <div>window.externalVar is {{ cat }}</div>
 
-<Test :prop1="testVal"/>
+    <Test :prop1="testVal" />
 
-<Validation v-for="validationItem in validationResults" :key=Math.random() :validation-item="validationItem" :validation-choices=validationChoices />
+    <Validation v-for="validationItem in validationResults" :key=Math.random() :validation-item="validationItem"
+      :validation-choices=validationChoices />
 
-<h3>Booty below</h3>
-
-<BootyOnly />
-</div>
-  
+    <h3>Pure bootstrap below</h3>
+    <BootyOnly />
+  </div>
 </template>
 
 <script>
 
-import { ref, mounted } from 'vue';
 import Test from './components/Test.vue'
 import Validation from './components/Validation.vue'
 import BootyOnly from './components/BootyOnly.vue'
@@ -58,9 +54,9 @@ export default {
 
     const testVal = "here is the testVal"
 
+    //Set up data structures to be passed to bootstrap-vue component
     const validationChoices = [ {text:'Yes',value:'Yes'}, {text:'No', value:'No'}, {text:'Pending', value:'Pending'}, {text:'Not Applicable', value:'NA'}];
- 
-    const validationResults = [ { 'section':'LEGAD', 'selection':'Yes' },  { 'section':'SNR', 'selection':'No' } ];
+     const validationResults = [ { 'section':'LEGAD', 'selection':'Yes' },  { 'section':'SNR', 'selection':'No' } ];
 
     return {testVal, blah, validationChoices, validationResults, ENTRY, cat}
 
@@ -70,17 +66,10 @@ mounted: (() => { console.log('ENTRY is ',window.ENTRY)})
 </script>
 
 <style scoped lang="scss">
-
-/*
-  @import '../node_modules/bootstrap/dist/css/bootstrap.css';
-  @import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
- */
-
-.rooty /deep/ {
-  @import "~../node_modules/bootstrap/dist/css/bootstrap";
-  @import "~../node_modules/bootstrap-vue/dist/bootstrap-vue";
- 
-}
+  .rooty /deep/ {
+    @import "~../node_modules/bootstrap/dist/css/bootstrap";
+    @import "~../node_modules/bootstrap-vue/dist/bootstrap-vue";
+ }
 </style>
   
 

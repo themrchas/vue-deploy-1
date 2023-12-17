@@ -1,6 +1,10 @@
 <template>
 
     <div id="testy">
+
+      <br />
+      <br />
+      <div class="h3 text-primary">Template Test</div>
     
     <h4 class="text-primary">Yes - in Test component</h4>
 
@@ -9,19 +13,13 @@
 </div>
 </template>
 
-
-
-
 <script>
 
-//import {BFormGroup, BFormCheckboxGroup } from 'bootstrap-vue'
 
 export default {
     name: "test",
-  //  components: {BFormGroup, BFormCheckboxGroup },
     props: ['prop1'],
-  //  directives: {'b-form-group' : BFormGroup, 'b-form-checkbox-group':  BFormCheckboxGroup}
-
+ 
 }
 </script>
 

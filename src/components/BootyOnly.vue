@@ -34,14 +34,14 @@ import { ref, computed, onMounted  } from 'vue'
 
 export default {
     name: "booty-only",
-  //  components: {BFormGroup, BFormCheckboxGroup },
     props: ['prop1'],
-  //  directives: {'b-form-group' : BFormGroup, 'b-form-checkbox-group':  BFormCheckboxGroup}
+  
   setup() { 
- // const loe = ref(window.ENTRY.PA_LineOfEffort)
- const loe = ref(window.ENTRY.PA_LineOfEffort);
+ 
+    //ENTRY defined in main.js
+    const loe = ref(window.ENTRY.PA_LineOfEffort);
 
-  console.log('loe is',loe)
+    console.log('loe is',loe)
 
   const itChanged = computed(() =>
     console.log('new loe value is', loe.value)
