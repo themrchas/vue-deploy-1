@@ -22,7 +22,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Examples
 
 - Using Vue instances with javascript variables.   
-  - Examples of bringing in javascript varibales in window scope and attempting to make them reactive.  Was able to bring in the javascript variable and make reactive, but it was only one-way binding. Changes within Vue were not pushed back into the javascript variable.  The possible work-around
+  - Examples of bringing in javascript variables in window scope and attempting to make them reactive.  Was able to bring in the javascript variable and make reactive, but it was only one-way binding. Changes within Vue were not pushed back into the javascript variable.  The possible work-around
   was to use 'vm.vueVariableName' in window scope to grab changes, but this is not truly reactive.
   - Does not use main.js
 - Using Vue templates with scoped bootstrap and bootstrap-vue
@@ -31,7 +31,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     - Uses normal build process 'npm run build'
     - Requires sass loader and adjustments in main.js
 - Creating a Vue custom element
-  - Custom element only allows you to appas in strings as props and there is not 'reactivity' between custom element and other DOM constructs
+  - Custom element only allows you to pass in strings as props and there is not 'reactivity' between custom element and other DOM constructs
   - In main use const wrappedElement = wrap(Vue,App); window.customElements.define("v-money",wrappedElement);
   - This method allowed bootstrap to be scoped to custom element only
   - Requires adjustments in main.js and use of web-component-wrapper
